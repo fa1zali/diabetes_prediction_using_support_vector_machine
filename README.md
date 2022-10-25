@@ -16,6 +16,31 @@ You can run the model using uvicorn on your local machine and test the API, refe
 
 Also the API is deployed on Heroku with the following URL : https://diabetesmlapi.herokuapp.com/diabetes_prediction
 
+'''
+
+import json
+import requests
+
+url = "https://diabetesmlapi.herokuapp.com/diabetes_prediction"
+
+payload = { 'Pregnancies' : 1,
+            'Glucose' : 85,
+            'BloodPressure' : 66,
+            'SkinThickness' : 29,
+            'Insulin' : 0, 
+            'BMI' : 26.6,
+            'DiabetesPedigreeFunction' : 0.351,
+            'Age' : 31
+        }
+
+json_payload = json.dumps(payload)
+
+response = requests.post(url, data = json_payload)
+print(response)
+print(response.text)
+
+'''
+
 **StreamLit Web App**
 
 We also created a simple web app using Streamlit.
