@@ -14,7 +14,7 @@ For this project, we will be building a machine learning model to classify wheth
 We have also created an API using FastAPI for users to interact with.
 You can run the model using uvicorn on your local machine and test the API, refer to diabetes_api.py & api_testing.py.
 
-Also the API is deployed on Heroku with the following URL: https://diabetesmlapi.herokuapp.com/diabetes_prediction
+Also the API is deployed on Heroku with the following URL : https://diabetesmlapi.herokuapp.com/diabetes_prediction
 
 **StreamLit Web App**
 
