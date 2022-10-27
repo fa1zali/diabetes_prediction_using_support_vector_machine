@@ -14,12 +14,22 @@ For this project, we will be building a machine learning model to classify wheth
 We have also created an API using FastAPI for users to interact with.
 You can run the model using uvicorn on your local machine and test the API, refer to diabetes_api.py & api_testing.py.
 
+```
+uvicorn diabetes_api:app --reload
+```
+
 Also the API is deployed on Heroku with the following URL : https://diabetesmlapi.herokuapp.com/diabetes_prediction
 
 **StreamLit Web App**
 
-We also created a simple web app using Streamlit.
-Use the following link to explore: [Diabetes Prediction Web App](https://diabetesmlwebapp.herokuapp.com/)
+We also created a web app using Streamlit.
+You can run the app on your local machine using StreamLit and test the web app, refer to diabetes_prediction_web_app.py.
+
+```
+streamlit run diabetes_prediction_web_app.py
+```
+
+The app is deployed on Heroku. Use the following link to explore: [Diabetes Prediction Web App](https://diabetesmlwebapp.herokuapp.com/)
 
 ### Files used
 We used the following dataset available on Kaggle to work on this project:
