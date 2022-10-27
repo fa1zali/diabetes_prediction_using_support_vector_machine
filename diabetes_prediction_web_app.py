@@ -11,8 +11,8 @@ import pickle
 import streamlit as st
 
 # loading the model
-loaded_model = pickle.load(open("/home/faisal/Downloads/diabetes_trained_model.sav", 'rb'))
-loaded_scaler = pickle.load(open("/home/faisal/Downloads/diabetes_scalar.sav", 'rb'))
+loaded_model = pickle.load(open("saved_model/diabetes_trained_model.sav", 'rb'))
+loaded_scaler = pickle.load(open("saved_model/diabetes_scalar.sav", 'rb'))
 
 # create function for prediction
 
@@ -35,28 +35,34 @@ def diabetes_prediction(input_data):
 
 def main():
     
-    # title for webpage
-    st.title("Diabates Prediction Web App")
+    # tite for the app
+    st.set_page_config(page_title="Diabates Prediction", page_icon="🍭", layout="centered")
+    st.title("🍭 Diabates Prediction")
     
     # getting input data from user
-    Pregnancies = st.text_input("Number of Pregnancies")
-    Glucose = st.text_input("Blood Glucose Level")
-    BloodPressure = st.text_input("Blood Pressure")
-    SkinThickness = st.text_input("Skin Thickness")
-    Insulin = st.text_input("Insulin")
-    BMI = st.text_input("BMI")
-    DiabetesPedigreeFunction = st.text_input("Diabetes Pedigree Function")
-    Age = st.text_input("Age")
-    
+    form = st.form(key="annotation")
+
+    with form:
+        cols = st.columns((1, 1))
+        Pregnancies = cols[0].text_input("Number of Pregnancies:")
+        Glucose = cols[1].text_input("Blood Glucose Level:")
+        BloodPressure = cols[0].text_input("Blood Pressure:")
+        SkinThickness = cols[1].text_input("Skin Thickness:")
+        Insulin = cols[0].text_input("Insulin:")
+        BMI = cols[1].text_input("BMI:")
+        DiabetesPedigreeFunction = cols[0].text_input("Diabetes Pedigree Function:")
+        Age = cols[1].text_input("Age:")
+        submitted = st.form_submit_button(label="Diabetes Test")
+
     # code for prediction
     diagnosis = ""
     
     # create a button
-    if st.button("Diabetes Test"):
+    if submitted:
         diagnosis = diabetes_prediction([Pregnancies, Glucose, BloodPressure, 
                                          SkinThickness, Insulin, BMI, DiabetesPedigreeFunction,
                                          Age])
-    st.success(diagnosis)
+        st.success(diagnosis)
 
 if __name__ == "__main__":
     main()
