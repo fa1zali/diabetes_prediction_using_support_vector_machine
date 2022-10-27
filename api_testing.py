@@ -1,9 +1,9 @@
 import json
 import requests
 
-# url = "http://127.0.0.1:8000/diabetes_prediction"
+url = "http://127.0.0.1:8000/diabetes_prediction"
 # url = "http://ee4f-34-91-223-34.ngrok.io/diabetes_prediction"
-url = "https://diabetesmlapi.herokuapp.com/diabetes_prediction"
+# url = "https://diabetesmlapi.herokuapp.com/diabetes_prediction"
 
 payload = { 'Pregnancies' : 1,
             'Glucose' : 85,

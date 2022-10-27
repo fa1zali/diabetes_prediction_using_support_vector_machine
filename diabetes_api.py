@@ -26,8 +26,8 @@ class model_input(BaseModel):
     Age : int
     
 # load the saved model
-loaded_model = pickle.load(open("diabetes_trained_model.sav", 'rb'))
-loaded_scaler = pickle.load(open("diabetes_scalar.sav", 'rb'))
+loaded_model = pickle.load(open("saved_model/diabetes_trained_model.sav", 'rb'))
+loaded_scaler = pickle.load(open("saved_model/diabetes_scalar.sav", 'rb'))
 
 @app.post('/diabetes_prediction')
 def diabetes_pred(input_parameters : model_input):
