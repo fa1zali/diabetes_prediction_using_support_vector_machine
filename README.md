@@ -2,7 +2,7 @@
 3rd Sep 2022
 
 ### Project Title
-**Diabetes Prediction using ML**
+**Diabetes Prediction using Support Vector Machine**
 
 ### Description
 Support Vector Machine is a supervised classification algorithm where we draw a line between two different categories to differentiate between them.
@@ -11,7 +11,7 @@ For this project, we will be building a machine learning model to classify wheth
 
 **API**
 
-We have also created an API using FastAPI for users to interact with.
+We have created an API using FastAPI for users to interact with.
 You can run the model using uvicorn on your local machine and test the API, refer to diabetes_api.py & api_testing.py.
 
 ```
